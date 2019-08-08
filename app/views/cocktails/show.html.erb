@@ -1,0 +1,14 @@
+<%= @cocktail[:name]%>
+<%= @doses %>
+
+
+<% content_for :title do %>Add a Dose<% end %>
+<h3>Add a Dose</h3>
+<div class="form">
+  <%= simple_form_for([@cocktail, @dose]) do |form| %>
+    <%#= form.input :ingredient %>
+    <%= form.association :ingredient %>
+    <%= form.input :description %>
+    <%= form.submit 'Submit', class: 'submit' %>
+  <% end %>
+</div>
